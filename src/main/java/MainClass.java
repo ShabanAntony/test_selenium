@@ -15,26 +15,21 @@ public class MainClass {
 
         driver.manage().window().maximize();
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
         driver.manage().window().setSize(new Dimension(800, 600));
 
         driver.get("https://www.google.com");
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver.navigate().to("https://www.selenium.dev/");
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.navigate().back();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         driver.navigate().forward();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+
         driver.navigate().refresh();
 
         System.out.println(driver.getTitle());
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver.quit();
     }
