@@ -12,15 +12,29 @@ import java.util.concurrent.TimeUnit;
 
 public class MainClass {
 
-    static  WebDriver driver;
+    static WebDriver driver;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.setProperty("webdriver.gecko.driver", "c:\\Users\\alexa\\IdeaProjects\\test_selenium\\drivers\\geckodriver.exe");
         driver = new FirefoxDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.manage().window().maximize();
+
+        driver.get("https://login.yahoo.com/account/create?.src=ym&.lang=ru-RU&.intl=ru&.done=https%3A%2F%2Fmail.yahoo.com%2Fd%3F.src%3Dfp&authMechanism=primary&specId=yidReg");
+
+        driver.findElement(By.xpath("//div[@class='phone-country-code pure-u-1']//div[@class='puree-dropdown']/select[@role='combobox']")).click();
+        driver.findElement(By.xpath("//div[@class='phone-country-code pure-u-1']//div[@class='puree-dropdown']/select[@role='combobox']//option[@value='AT']")).click();
+
+
+
+
+
+
+
+
+
 
 //        driver.get("https://en.wikipedia.org/wiki/Main_Page");
 //
@@ -36,18 +50,21 @@ public class MainClass {
 //
 //        driver.findElement(By.xpath("//span[@class='a-list-item']//label//input[@name='s-ref-checkbox-21180942011']")).click();
 
-        driver.get("https://market.yandex.ru/");
-        driver.findElement(By.xpath("//span[text()='Бытовая техника']")).click();
-        driver.findElement(By.xpath("//div[@class='section _32PriwSr5B _3WZ8yOWVnM _2pc-e5GHOv uVxPQP6pdS']//a[text()='Посудомоечные машины']")).click();
-        driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).click();
-        System.out.println("Is radio button selected? " + driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).isSelected());
-
-
-
-
-        //  driver.quit();
-    }
-    public static void selectRadioButton(String name){
-        driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).click();
+//        driver.get("https://market.yandex.ru/");
+//        driver.findElement(By.xpath("//span[text()='Бытовая техника']")).click();
+//        driver.findElement(By.xpath("//div[@class='section _32PriwSr5B _3WZ8yOWVnM _2pc-e5GHOv uVxPQP6pdS']//a[text()='Посудомоечные машины']")).click();
+//        driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).click();
+//        System.out.println("Is radio button selected? " + driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).isSelected());
+//
+//      //  following-sibling
+//        //  driver.quit();s
+//    }
+//
+//    public static void selectCheckBox(String name) {
+//        String rbXpath = "//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']";
+//        if (!driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).isSelected()) {
+//            driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).click();
+//        }
+//    }
     }
 }
