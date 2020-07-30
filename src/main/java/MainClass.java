@@ -1,3 +1,4 @@
+import com.sun.org.apache.xalan.internal.xsltc.dom.SimpleResultTreeImpl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -25,11 +26,19 @@ public class MainClass {
         driver.get("https://login.yahoo.com/account/create?.src=ym&.lang=ru-RU&.intl=ru&.done=https%3A%2F%2Fmail.yahoo.com%2Fd%3F.src%3Dfp&authMechanism=primary&specId=yidReg");
 
         driver.findElement(By.xpath("//div[@class='phone-country-code pure-u-1']//div[@class='puree-dropdown']/select[@role='combobox']")).click();
-        driver.findElement(By.xpath("//div[@class='phone-country-code pure-u-1']//div[@class='puree-dropdown']/select[@role='combobox']//option[@value='AT']")).click();
+        driver.findElement(By.xpath("//div[@class='phone-country-code pure-u-1']//div[@class='puree-dropdown']/select[@role='combobox']//option[@role='option'][1]")).click();
 
 
+    }
 
 
+    public static void  selectOption(String listName, String option){
+
+        String listXpath = "//div[@id='relative-country-code']//div[@class='puree-dropdown']/select[@role='combobox']";
+        String optionXpath = "//div[@id='relative-country-code']//div[@class='puree-dropdown']/select[@role='combobox']//option[1]";
+
+        driver.findElement(By.xpath("//select[@name='shortCountryCode']"));
+        driver.findElement(By.xpath("//select[@name='mm']"));
 
 
 
@@ -64,7 +73,6 @@ public class MainClass {
 //        String rbXpath = "//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']";
 //        if (!driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).isSelected()) {
 //            driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).click();
-//        }
-//    }
+
     }
 }
