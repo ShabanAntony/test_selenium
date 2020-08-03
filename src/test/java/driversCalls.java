@@ -65,4 +65,32 @@ public class driversCalls {
 //        }else
 //        System.out.println("Log in passed");
 
+//        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+//
+//        WebElement link = driver.findElement(By.xpath("//li[@id='n-aboutsite']/a"));
+//
+//        System.out.println(link.getText());
+//
+//        link.click();
+
+//        driver.get("https://www.amazon.com/");
+//        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+//        driver.findElement(By.xpath("//div[@class='a-section grid-row-1']//div[@class='a-section a-spacing-none quadrant-container-0 aok-float-left']//a[@class='a-link-normal quadrant-overlay']")).click();
+//
+//        driver.findElement(By.xpath("//span[@class='a-list-item']//label//input[@name='s-ref-checkbox-21180942011']")).click();
+
+//        driver.get("https://market.yandex.ru/");
+//        driver.findElement(By.xpath("//span[text()='Бытовая техника']")).click();
+//        driver.findElement(By.xpath("//div[@class='section _32PriwSr5B _3WZ8yOWVnM _2pc-e5GHOv uVxPQP6pdS']//a[text()='Посудомоечные машины']")).click();
+//        driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).click();
+//        System.out.println("Is radio button selected? " + driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).isSelected());
+//
+//      //  following-sibling
+//        //  driver.quit();s
+//    }
+//
+//    public static void selectCheckBox(String name) {
+//        String rbXpath = "//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']";
+//        if (!driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).isSelected()) {
+//            driver.findElement(By.xpath("//fieldset[@class='_3YUd4sIiO9']//span[text()='Новый']")).click();
 }
