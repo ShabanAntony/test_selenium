@@ -87,6 +87,16 @@ public class driversCalls {
 //
 //      //  following-sibling
 //        //  driver.quit();s
+
+    //        driver.findElement(By.xpath("//span[text()='Бытовая техника']")).click();
+//
+//        driver.findElement(By.xpath("//a[text()='Стиральные машины']")).click();
+//
+//        //driver.findElement(By.xpath("//div[@class='_178jz2CyDL']/div[2]/ul[@class='_2y67xS5HuR']"));
+//        List<WebElement> checkboxes = driver.findElements(By.xpath("//div[@class=\"_178jz2CyDL\"]/div[2]//input[@type=\"checkbox\"]"));
+//        System.out.println(checkboxes.size());
+//        checkboxes.get(1).click();
+
 //    }
 //
 //    public static void selectCheckBox(String name) {
