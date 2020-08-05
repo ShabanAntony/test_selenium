@@ -4,7 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Table {
 
@@ -28,14 +30,37 @@ public class Table {
         return headingColumns;
     }
 
-    public List<List<WebDriver>> getRowsWithColumns(){
+    public List<List<WebElement>> getRowsWithColumns(){
         List<WebElement> rows = getRows();
         List<List<WebElement>> rowsWithColumns = new ArrayList<List<WebElement>>();
         for (WebElement row : rows){
-            List<WebElement> rowWithColumns = row.findElement(By.xpath(".//td"));
+            List<WebElement> rowWithColumns = row.findElements(By.xpath(".//td"));
             rowsWithColumns.add(rowWithColumns);
 
         }
         return rowsWithColumns;
+    }
+
+    public List<Map<String, WebElement>> getRowsWithColumnsByHeadings(){
+        List<List<WebElement>> rowsWithColums = getRowsWithColumns();
+        List<Map<String, WebElement>> rowsWithColumnsByHeadings = new ArrayList<Map<String, WebElement>>();
+        Map<String, WebElement> rowByHeadings;
+        List<WebElement> headingColumns = getHeadings();
+            for (List<WebElement> row : rowsWithColums){
+                rowByHeadings = new HashMap<String, WebElement>();
+                for (int i = 0; i < headingColumns.size(); i++){
+                    String heading = headingColumns.get(i).getText();
+                    WebElement cell = row.get(i);
+                    rowByHeadings.put(heading, cell);
+                }
+                rowsWithColumnsByHeadings.add(rowByHeadings);
+            }
+            return rowsWithColumnsByHeadings;
+    }
+
+    public String getValueFromCell(int rowNumber, int columnNumber){
+        List<List<WebElement>> rowsWithColums = getRowsWithColumns();
+        WebElement cell = rowsWithColums.get(rowNumber -1).get(columnNumber - 1);
+        return cell.getText();
     }
 }
