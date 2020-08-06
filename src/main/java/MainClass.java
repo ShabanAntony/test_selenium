@@ -30,9 +30,20 @@ public class MainClass {
 
         driver.manage().window().maximize();
 
-        driver.get("https://market.yandex.ru/");
+        driver.get("https://www.w3schools.com/html/html_tables.asp");
 
-        driver.findElement(By.xpath("//table[@id='customers']"));
+        WebElement tableElement = driver.findElement(By.xpath("//table[@id='customers']"));
+
+        Table table = new Table(tableElement, driver);
+
+        System.out.println("Rows number is: " + table.getRows().size());
+        System.out.println(table.getValueFromCell(2,3));
+        System.out.println(table.getValueFromCell(4,1));
+
+        System.out.println(table.getValueFromCell(4,"Company"));
+        System.out.println(table.getValueFromCell(1,"Country"));
+        System.out.println(table.getValueFromCell(1,"Contact"));
+
 
     }
 

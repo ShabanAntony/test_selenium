@@ -63,4 +63,10 @@ public class Table {
         WebElement cell = rowsWithColums.get(rowNumber -1).get(columnNumber - 1);
         return cell.getText();
     }
+
+    public String getValueFromCell(int rowNumber, String columnName){
+    List<Map<String, WebElement>> rowsWithColumnsByHeadings = getRowsWithColumnsByHeadings();
+    return rowsWithColumnsByHeadings.get(rowNumber - 1).get(columnName).getText();
+
+    }
 }
