@@ -30,19 +30,34 @@ public class MainClass {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.w3schools.com/html/html_tables.asp");
+        driver.get("https://market.yandex.ru/");
 
-        WebElement tableElement = driver.findElement(By.xpath("//table[@id='customers']"));
+        driver.findElement(By.xpath("//div[@class='_381y5orjSo _21NjfY1k45']/div[6]")).click();
 
-        Table table = new Table(tableElement, driver);
+        driver.findElement(By.xpath("//a[text()='Стиральные и сушильные машины']")).click();
 
-        System.out.println("Rows number is: " + table.getRows().size());
-        System.out.println(table.getValueFromCell(2,3));
-        System.out.println(table.getValueFromCell(4,1));
+        driver.findElement(By.xpath("//a[contains(text(),'Стиральные машины')]")).click();
 
-        System.out.println(table.getValueFromCell(4,"Company"));
-        System.out.println(table.getValueFromCell(1,"Country"));
-        System.out.println(table.getValueFromCell(1,"Contact"));
+        driver.findElement(By.xpath("//div[@class='_16hsbhrgAf']//input[@name='Производитель ATLANT']/..")).click();
+
+
+
+
+
+
+//        driver.get("https://www.w3schools.com/html/html_tables.asp");
+//
+//        WebElement tableElement = driver.findElement(By.xpath("//table[@id='customers']"));
+//
+//        Table table = new Table(tableElement, driver);
+//
+//        System.out.println("Rows number is: " + table.getRows().size());
+//        System.out.println(table.getValueFromCell(2,3));
+//        System.out.println(table.getValueFromCell(4,1));
+//
+//        System.out.println(table.getValueFromCell(4,"Company"));
+//        System.out.println(table.getValueFromCell(1,"Country"));
+//        System.out.println(table.getValueFromCell(1,"Contact"));
 
 
     }
